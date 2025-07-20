@@ -1,0 +1,5 @@
+Un Marco para la Excelencia en la Ingeniería de Software Impulsada por IA: De la Arquitectura de Prompts a la Generación Autónoma de Código
+
+(El texto completo de las reglas y marco de investigación que has proporcionado)
+
+Este archivo contiene las reglas y principios a seguir para la generación y modificación de código en este proyecto, según la investigación sobre IA y generación de código. Por favor, consulta este documento antes de realizar cambios o generar nuevo código.
