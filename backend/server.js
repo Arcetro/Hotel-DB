@@ -10,6 +10,11 @@ const PORT = 3001;
 app.use(cors());
 app.use(express.json());
 
+// Root endpoint
+app.get('/', (req, res) => {
+  res.send('Hotel-DB Backend is running. Use /api/health for status.');
+});
+
 // SQLite database setup
 const dbPath = path.resolve(__dirname, 'db.sqlite');
 const db = new sqlite3.Database(dbPath, (err) => {

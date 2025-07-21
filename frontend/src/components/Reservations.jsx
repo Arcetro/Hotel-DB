@@ -19,12 +19,13 @@ function Reservations() {
     fetchData();
   }, []);
 
+  const api = import.meta.env.VITE_API_URL;
   const fetchData = async () => {
     try {
       const [reservationsRes, guestsRes, roomsRes] = await Promise.all([
-        fetch('http://localhost:3001/api/reservations'),
-        fetch('http://localhost:3001/api/guests'),
-        fetch('http://localhost:3001/api/rooms')
+        fetch(`${api}/api/reservations`),
+        fetch(`${api}/api/guests`),
+        fetch(`${api}/api/rooms`)
       ]);
 
       const reservationsData = await reservationsRes.json();
@@ -46,8 +47,8 @@ function Reservations() {
     
     try {
       const url = editingReservation 
-        ? `http://localhost:3001/api/reservations/${editingReservation.id}`
-        : 'http://localhost:3001/api/reservations';
+        ? `${api}/api/reservations/${editingReservation.id}`
+        : `${api}/api/reservations`;
       
       const method = editingReservation ? 'PUT' : 'POST';
       

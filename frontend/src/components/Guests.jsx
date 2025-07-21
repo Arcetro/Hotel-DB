@@ -16,9 +16,10 @@ function Guests() {
     fetchGuests();
   }, []);
 
+  const api = import.meta.env.VITE_API_URL;
   const fetchGuests = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/guests');
+      const response = await fetch(`${api}/api/guests`);
       const data = await response.json();
       setGuests(data);
     } catch (error) {
@@ -33,8 +34,8 @@ function Guests() {
     
     try {
       const url = editingGuest 
-        ? `http://localhost:3001/api/guests/${editingGuest.id}`
-        : 'http://localhost:3001/api/guests';
+        ? `${api}/api/guests/${editingGuest.id}`
+        : `${api}/api/guests`;
       
       const method = editingGuest ? 'PUT' : 'POST';
       

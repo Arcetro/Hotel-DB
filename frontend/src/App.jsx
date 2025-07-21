@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     // Check backend connection
-    fetch('http://localhost:3001/api/health')
+    fetch(`${import.meta.env.VITE_API_URL}/api/health`)
       .then(res => res.json())
       .then(data => setBackendStatus('Connected'))
       .catch(() => setBackendStatus('Disconnected'));

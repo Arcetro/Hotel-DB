@@ -16,9 +16,10 @@ function Rooms() {
     fetchRooms();
   }, []);
 
+  const api = import.meta.env.VITE_API_URL;
   const fetchRooms = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/rooms');
+      const response = await fetch(`${api}/api/rooms`);
       const data = await response.json();
       setRooms(data);
     } catch (error) {
@@ -33,8 +34,8 @@ function Rooms() {
     
     try {
       const url = editingRoom 
-        ? `http://localhost:3001/api/rooms/${editingRoom.id}`
-        : 'http://localhost:3001/api/rooms';
+        ? `${api}/api/rooms/${editingRoom.id}`
+        : `${api}/api/rooms`;
       
       const method = editingRoom ? 'PUT' : 'POST';
       

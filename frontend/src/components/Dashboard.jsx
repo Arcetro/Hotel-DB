@@ -12,10 +12,11 @@ function Dashboard() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
+        const api = import.meta.env.VITE_API_URL;
         const [guestsRes, roomsRes, reservationsRes] = await Promise.all([
-          fetch('http://localhost:3001/api/guests'),
-          fetch('http://localhost:3001/api/rooms'),
-          fetch('http://localhost:3001/api/reservations')
+          fetch(`${api}/api/guests`),
+          fetch(`${api}/api/rooms`),
+          fetch(`${api}/api/reservations`)
         ]);
 
         const guests = await guestsRes.json();
